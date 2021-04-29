@@ -8,6 +8,7 @@ public class Mine extends Square
    boolean is_Mine = true;
    public void display()
    {
+      //This method displays a mine when the square has a mine.
       return;
    }
 }
