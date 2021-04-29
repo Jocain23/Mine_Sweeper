@@ -1,3 +1,3 @@
 # Mine_Sweeper
-Yuh its  a thing
+Good luck
 Made by: Jonluke O'Cain, Hardeep, Vayun Malik
