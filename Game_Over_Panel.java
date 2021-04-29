@@ -6,6 +6,7 @@
    import java.awt.event.*;
 public class Game_Over_Panel extends JPanel
 {
+   //This panel is shown to the user when the game is ended.
       public Game_Over_Panel()
       {
             /// sets up the panel
