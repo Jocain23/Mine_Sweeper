@@ -4,6 +4,7 @@
    
 public class Empty extends Square 
 {
+   //This class extends the Square class.
    boolean is_Mine = true;
    public void display()
    {
