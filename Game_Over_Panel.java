@@ -4,12 +4,6 @@
 
 public class Game_Over_Panel extends JPanel
 {
-   public static void get_side_length()
-   {
-   }
-   
-   public static void get_num_bombs()
-   {
-   }
+
 
 }
