@@ -8,7 +8,7 @@ public class Empty extends Square
    boolean is_Mine = false;
    public void display()
    {
-   //This method displays when the square is empty.
+   //This method displays a blank white square when the square is empty.
       return;
    }
 }
