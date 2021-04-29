@@ -1,9 +1,9 @@
-   import javax.swing.*;
-   import java.awt.*;
-   import java.awt.event.*;
-   //Name: Hardeep Mann, Jonluke O'Cain
-   //Date: 4/27/2021
+   //Name: Hardeep Mann, Jonluke O'Cain, and Vayun Malik
+   //Last Updated: 4/27/2021
    //Period: 2
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 public class Start_Up_Panel extends JPanel
 {
