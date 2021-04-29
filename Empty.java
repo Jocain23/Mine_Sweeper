@@ -5,7 +5,8 @@
 public class Empty extends Square 
 {
    boolean is_Mine = true;
-   public void display(); 
+   public void display()
    {
+      return;
    }
 }
