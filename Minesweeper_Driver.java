@@ -1,51 +1,18 @@
-   //Name: Hardeep Mann, Jonluke O'Cain, Vayun Malik
-   //Date: 4/29/2021
+   	//Name: Hardeep Mann and Jonluke O'Cain
+   //Date: 4/27/2021
    //Period: 2
-   import javax.swing.*;
-   import java.awt.*;
-   import java.awt.event.*;
-
-public class Start_Up_Panel extends JPanel
+   import javax.swing.JFrame;
+public class Minesweeper_Driver
 {
-       public Start_Up_Panel()
-       {
-       
-       }
-       
-   public static void set_side_length()
+   public static void main(String[] args)
    {
+         JFrame frame = new JFrame("Mine Sweeper");
+         frame.setSize(500, 150);
+         frame.setLocation(150, 100);
+         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         frame.setContentPane(new Start_Up_Panel());
+         frame.setContentPane(new Playboard_Panel());
+         frame.setContentPane(new Game_Over_Panel());
+         frame.setVisible(true);
    }
-   
-   public static void set_num_bombs()
-   {
-   }
-   public int get_side_length()
-   {
-   return 99;// to compile
-   }
-      public int get_num_bombs()
-   {
-   return 99;// to compile
-   }
-    private class Listener1 implements ActionListener{
-      public void actionPerformed(ActionEvent e)
-      {
-      
-      }
-    }
-
-     private class Listener2 implements ActionListener{
-      public void actionPerformed(ActionEvent e)
-      {
-      
-      }
-    }
-     private class Listener3 implements ActionListener{
-      public void actionPerformed(ActionEvent e)
-      {
-      }
-    }
-
-
-
 }
