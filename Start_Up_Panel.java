@@ -1,5 +1,5 @@
 /*********************************************
-The StartThis is the panel that gets the user input. 
+The Start up panel that gets the user input. 
 It will ask the user for a side-length and the number of
 mines. It will give three preset recommendations of 
 easy medium and hard that the player can choose from. 
