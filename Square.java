@@ -16,7 +16,8 @@ public abstract class Square
    public static void clicked_on()
    {
       //Whenever a square is interacted with the state changes to clicked_on. 
-      //In this state the square opens a menu that allows the user to either flag or reveal the square. When the square is flagged it transitions into the flagged state.
+      //In this state the square opens a menu that allows the user to either flag or reveal the square. 
+      //When the square is flagged it transitions into the flagged state.
    }
    
    public static void flagged()
