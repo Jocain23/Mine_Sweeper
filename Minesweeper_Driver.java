@@ -7,7 +7,7 @@ public class Minesweeper_Driver
    //This is the class that will set everything up. 
    //It will create the start up panel with a predetermined size.
    //When the start up panel gets the size and number of mines from the user it will send that information to the playboard panel. 
-   //Then the driver will create the playboard panel.
+   //Then the driver will create the playboard panel, and then create the game over panel when the game ends.
    public static void main(String[] args)
    {
          JFrame frame = new JFrame("Mine Sweeper");
