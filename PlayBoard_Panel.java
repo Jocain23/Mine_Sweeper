@@ -24,7 +24,6 @@
          public void actionPerformed(ActionEvent e)
          {
             // generates a map of empty squares
-            System.out.println("This works");
          }
       }
        
@@ -32,8 +31,7 @@
       {
          public void actionPerformed(ActionEvent e)
          {
-            // generates a map of empty squares
-            System.out.println("This works");
+            //places the mines and gives all the squares their values
          }
       }
 }
