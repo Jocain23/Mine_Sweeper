@@ -1,15 +1,16 @@
-   //Name: Hardeep Mann, Jonluke O`Cain, and Vayun Malik
-   //Last Updated: 4/27/2021
+	//Name: Hardeep Mann
+   //Date: 4/27/2021
    //Period: 2
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 public class Playboard_Panel extends JPanel
 {
-    JPanel subpanel = new JPanel();
-       subpanel.setLayout(new FlowLayout);
-       public Playboard_Panel()
-       {
+   public Playboard_Panel()
+   {
        
-       }
+   }
    public static void Initial_Generate()
    {
    }
@@ -29,13 +30,13 @@ public class Playboard_Panel extends JPanel
       {
       
       }
-    }
+   }
 
-    private class Listener2 implements ActionListener{
+   private class Listener2 implements ActionListener{
       public void actionPerformed(ActionEvent e)
       {
       
       }
-    }
+   }
 
 }
