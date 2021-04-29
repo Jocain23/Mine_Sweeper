@@ -1,11 +1,12 @@
-   	//Name: Hardeep Mann
+   import javax.swing.*;
+   import java.awt.*;
+   import java.awt.event.*;
+   //Name: Hardeep Mann, Jonluke O'Cain
    //Date: 4/27/2021
    //Period: 2
 
 public class Start_Up_Panel extends JPanel
 {
-       JPanel subpanel = new JPanel();
-       subpanel.setLayout(new FlowLayout);
        public Start_Up_Panel()
        {
        
