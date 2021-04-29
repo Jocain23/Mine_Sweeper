@@ -4,8 +4,8 @@
    
 public class Empty extends Square 
 {
-   //This class extends the Square class.
-   boolean is_Mine = true;
+   //This class extends the abstract Square class. It represents the state when the square does not contain a mine.
+   boolean is_Mine = false;
    public void display()
    {
       return;
