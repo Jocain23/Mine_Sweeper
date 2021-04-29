@@ -4,6 +4,24 @@
 
 public class Game_Over_Panel extends JPanel
 {
-
-
-}
+   JPanel subpanel = new JPanel();
+       subpanel.setLayout(new FlowLayout);
+       public Game_Over_Panel()
+       {
+       
+       }
+   public static void getResult
+   {
+   }
+   private class Listener1 implements ActionListener{
+      public void actionPerformed(ActionEvent e)
+      {
+      
+      }
+    
+    private class Listener2 implements ActionListener{
+      public void actionPerformed(ActionEvent e)
+      {
+      
+      }
+     }
