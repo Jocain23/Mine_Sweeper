@@ -15,7 +15,7 @@ public class Minesweeper_Driver
          frame.setLocation(150, 100);
          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          frame.setContentPane(new Start_Up_Panel());
-         frame.setContentPane(new PlayBoard_Panel());
+         frame.setContentPane(new Playboard_Panel());
          frame.setContentPane(new Game_Over_Panel());
          frame.setVisible(true);
    }
