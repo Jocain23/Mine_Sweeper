@@ -15,7 +15,7 @@
          button1.addActionListener(new Listener1());
          panel.add(button1);
          
-         JButton button2 = new JButton("Flagg");
+         JButton button2 = new JButton("Flag");
          button2.addActionListener(new Listener2());
          panel.add(button1);
       }
