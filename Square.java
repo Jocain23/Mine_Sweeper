@@ -1,4 +1,4 @@
-     //Name: Hardeep Mann, Jonluke O`Cain, and Vayun Malik
+    //Name: Hardeep Mann, Jonluke O`Cain, and Vayun Malik
    //Last Updated: 5/4/2021
    //Period: 2
  import javax.swing.*;
@@ -19,12 +19,13 @@ public abstract class Square
    public JLabel label1 = new JLabel(" ");
    public abstract void display();
    
-   public void clicked_on()
+   public static void clicked_on()
    {
       //Whenever a square is interacted with the state changes to clicked_on. 
       //In this state the square opens a menu that allows the user to either flag or reveal the square. 
       //When the square is flagged it transitions into the flagged state.
-   JPanel karl = new Clicked_Or_Flagged_Panel(this);
+      
+
    }
 
    
