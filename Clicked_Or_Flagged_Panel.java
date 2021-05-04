@@ -3,7 +3,7 @@
    import java.awt.event.*;
    public class Clicked_Or_Flagged_Panel extends JPanel
    {
-      public Clicked_Or_Flagged_Panel()
+      public Clicked_Or_Flagged_Panel(Square arg)
       {
          setLayout(new BorderLayout());
          
@@ -11,11 +11,11 @@
          panel.setLayout(new FlowLayout());
          add(panel, BorderLayout.SOUTH);
          
-         JButton button1 = new JButton("Revealed");
+         JButton button1 = new JButton("Reveal");
          button1.addActionListener(new Listener1());
          panel.add(button1);
          
-         JButton button2 = new JButton("Flagged");
+         JButton button2 = new JButton("Flagg");
          button2.addActionListener(new Listener2());
          panel.add(button1);
       }
@@ -23,14 +23,14 @@
       {
          public void actionPerformed(ActionEvent e)
          {
-            // generates a map of empty squares
+          Square.clicked_on();
          }
       }
       private class Listener2 implements ActionListener
       {
          public void actionPerformed(ActionEvent e)
          {
-            // generates a map of empty squares
+          Square.flagged();  
          }
       }
 }
