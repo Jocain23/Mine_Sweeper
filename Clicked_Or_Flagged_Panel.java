@@ -1,3 +1,6 @@
+    //Name: Hardeep Mann, Jonluke O`Cain, and Vayun Malik
+   //Last Updated: 5/4/2021
+   //Period: 2
    import javax.swing.*;
    import java.awt.*;
    import java.awt.event.*;
