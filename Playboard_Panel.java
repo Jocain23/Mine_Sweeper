@@ -29,9 +29,11 @@
    {
       /// This method is called when the first square is revealed. This places all the mines. 
    }
-      public static void Mine_Check(int x, int y)
+      public int Mine_Check(int x, int y)
    {
       /// Starts by setting a count to 0. Then it assigns each square a number based on how many mines are in its vicinity. It then returns the count.
+      int x = 0;
+      return x;
    }
       public static void Spread(int x, int y)
    {
