@@ -34,7 +34,7 @@ public class Game_Over_Panel extends JPanel
       {
          // the user can click this button to try again
          JFrame frame = new JFrame("Mine Sweeper");
-         frame.setSize(800, 200);
+         frame.setSize(800, 300);
          frame.setLocation(150, 100);
          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          frame.setContentPane(new Start_Up_Panel());
