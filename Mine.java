@@ -1,5 +1,5 @@
-   //Name: Hardeep Mann, Jonluke O`Cain, and Vayun Malik
-   //Last Updated: 4/29/2021
+      //Name: Hardeep Mann, Jonluke O`Cain, and Vayun Malik
+   //Last Updated: 5/6/2021
    //Period: 2
    
 public class Mine extends Square 
@@ -9,6 +9,8 @@ public class Mine extends Square
    public void display()
    {
       //This method displays a mine when the square has a mine.
-      return;
+    label1.setText("x");
+    Game_Over_Panel Jeff = new Game_Over_Panel();
+    return;
    }
 }
