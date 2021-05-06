@@ -11,7 +11,7 @@ public class Minesweeper_Driver
    //When the start up panel gets the size and number of mines from the user it will send that information to the playboard panel. 
    //Then the driver will create the playboard panel, and then create the game over panel when the game ends.
          JFrame frame = new JFrame("Mine Sweeper");
-         frame.setSize(500, 150);
+         frame.setSize(800, 200);
          frame.setLocation(150, 100);
          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          frame.setContentPane(new Start_Up_Panel());
