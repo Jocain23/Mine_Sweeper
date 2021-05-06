@@ -84,7 +84,7 @@ public class Start_Up_Panel extends JPanel
          frame.setSize(1000, 450);
          frame.setLocation(150, 100);
          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-         frame.setContentPane(new Playboard_Panel());
+         frame.setContentPane(new Playboard_Panel(side_length, num_mines));
          frame.setVisible(true);
       }
      
