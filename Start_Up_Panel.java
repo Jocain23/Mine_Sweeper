@@ -45,32 +45,7 @@ public class Start_Up_Panel extends JPanel
       author_label = new JLabel("By Hardeep Mann, Jonluke O'Cain, and Vayun Malik, under the supervision of the great Mr. Rose. ");
       add(author_label);
    }
-   
-   public static void set_side_length()
-   {
-   }
-   /*******************************
-   Sets the number of squares on each side
-   @param side_length
-   *******************************/
-
-   public static void set_num_bombs()
-   {
-   }
-   /*******************************
-   Sets the number of squares which will be bombs 
-   @param num_bombs
-   *******************************/
-   public int side_length()
-   {
-      return 99;// to compile
-   }
-   public int num_bombs()
-   {
-     
-      return 99;// to compile
-   }
-   
+      
    private class Listener1 implements ActionListener{
       public void actionPerformed(ActionEvent e)
       {
