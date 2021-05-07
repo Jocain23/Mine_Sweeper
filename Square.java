@@ -1,6 +1,6 @@
     /*************************************************
  Name: Hardeep Mann, Jonluke O`Cain, and Vayun Malik
- Last Updated: 5/6/2021
+ Last Updated: 5/7/2021
 Period: 2
 **************************************************/
  import javax.swing.*;
@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 
-public abstract class Square
+public class Square
 {
  
 
@@ -21,8 +21,41 @@ public abstract class Square
    public boolean clicked = false; 
    // The boolean varible clicked starts false and set to true when clicked, Used for checking win conditions
    //The boolean variable is_Mine is true when the square has a mine, and false otherwise.
+
+   
+   
    public JLabel label1 = new JLabel(" ");
-   public abstract void display();
+   public void make_Mine(boolean x)
+   {
+    if (x == true)
+    {
+    is_Mine = true;
+    }
+    else 
+    {
+     is_Mine = false;
+    }
+   }
+   public void display()
+   {
+    if (is_Mine == true)
+    {
+    label1.setText("x");
+    }
+    if (is_Mine == false)
+    {
+    int x = 0;
+    if (x == 0) 
+    {
+    label1.setText(" ");
+    }
+    else 
+    { label1.setText(""+x);
+    
+    }
+    }
+   }
+   
    
    public void clicked_on()
    {
@@ -45,4 +78,5 @@ public abstract class Square
    {
       label1.setText("F");
    }
+
 }
