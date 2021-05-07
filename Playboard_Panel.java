@@ -15,10 +15,6 @@ public class Playboard_Panel extends JPanel
       panel.setLayout(new FlowLayout());
       add(panel, BorderLayout.SOUTH);
          
-      JButton button1 = new JButton("Generate");
-      button1.addActionListener(new Listener1());
-      panel.add(button1);
-         
    }
    public static void Initial_Generate()
    {
