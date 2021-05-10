@@ -1,5 +1,10 @@
-
-
+/***************************************************
+This is one of the simplest classes we made as it 
+just displays a stopwatch, so the user can know
+how much time has elapsed, while they play.
+@author Hardeep Mann, Jonluke O'Cain and Vayun Malik
+@version 1.0
+ ****************************************************/
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.*;
