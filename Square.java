@@ -48,35 +48,59 @@ public class Square extends JButton {
    public void setFlagged(boolean isFlagged) {
       this.isFlagged = isFlagged;
    }
-
+ /********************************************
+*Returns the Whether the Square is a mine
+@return is_Mine Mine status
+********************************************/
    public boolean isMine() {
       return isMine;
    }
-
+ /********************************************
+*Sets the is_Mine boolean to the input boolean
+@param is_Mine changes whether is a mine
+********************************************/
    public void setIsMine(boolean isMine) {
       this.isMine = isMine;
    }
-
+ /********************************************
+*Returns the Square's x location
+@return x x location
+********************************************/
    public int getXLoc() {
       return x;
    }
-
+ /********************************************
+*Tells the Square its x location
+@param x x location
+********************************************/
    public void setXLoc(int x) {
       this.x = x;
    }
-
+ /********************************************
+*Returns the Square's y location
+@return y y location
+********************************************/
    public int getYLoc() {
       return y;
    }
-
+ /********************************************
+*Tells the Square its y location
+@param y y location
+********************************************/
    public void setYLoc(int y) {
       this.y = y;
    }
-
+ /********************************************
+*Returns how many of the surrounding squares have mines
+@return minesTouching number of surrounding mines
+********************************************/
    public int getMinesTouching() {
       return minesTouching;
    }
-
+ /********************************************
+*Tells the Square how many of the surrounding squares have mines
+@param minesTouching number of surrounding mines
+********************************************/
    public void setMinesTouching(int minesTouching) {
       this.minesTouching = minesTouching;
    }
