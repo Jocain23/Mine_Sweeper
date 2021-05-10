@@ -1,67 +1,216 @@
+
 /*********************************************
 The Start up panel that gets the user input. 
 It will ask the user for a side-length and the number of
-mines. When these two are entered they will be saved as 
-integer variables side_length and num_bombs respectively. 
+mines. It will give three preset recommendations of 
+easy medium and hard that the player can choose from. 
+When these two are entered they will be saved as integer 
+variables side_length and num_bombs respectively. 
 Once the user has entered all of the information a 
 generate button will be displayed which the user can 
 click to generate the playboard and start the game.
 @author Hardeep Mann, Jonluke O'Cain and Vayun Malik
 @version 0.1
-**********************************************/ 
+ **********************************************/
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
-public class Start_Up_Panel extends JPanel
-{
-   private JLabel title_label, author_label, side_length_label, num_mines_label;
-   private JTextField length_box, mines_box;
-   private int side_length, num_mines;
-   public Start_Up_Panel()
-   {
-      setLayout(new FlowLayout());
-      title_label = new JLabel("MINESWEEPER");
-      title_label.setFont(new Font("Serif", Font.BOLD, 75));
-      title_label.setForeground(Color.blue);
-      add(title_label);
-      
-      JPanel panel = new JPanel();
-      panel.setLayout(new FlowLayout());
-      add(panel);
-      
-      length_box = new JTextField("Side length", 10);
-      length_box.setHorizontalAlignment(SwingConstants.LEFT);
-      panel.add(length_box);
-     
-      mines_box = new JTextField("Number of mines", 10);
-      mines_box.setHorizontalAlignment(SwingConstants.LEFT);
-      panel.add(mines_box);
-      
-      JButton button = new JButton("Next");
-      button.addActionListener(new Listener1());
-      panel.add(button);
-      
-      author_label = new JLabel("By Hardeep Mann, Jonluke O'Cain, and Vayun Malik, under the supervision of the great Mr. Rose. ");
-      add(author_label);
+public class Start_Up_Panel extends JPanel {
+
+	/**
+	 * 
+	 */
+   private static final long serialVersionUID = 1L;
+   private JTextField numCellsTextField = new JTextField(10);
+   private JTextField nummMinesTextField = new JTextField(10);
+
+   private int numCellsInSide = 0;
+   private int numMines = 0;
+   private Minesweeper_Driver driver;
+
+   public Start_Up_Panel(Minesweeper_Driver driver) throws IOException {
+   
+      this.driver = driver;
+   
+      JPanel p1 = new JPanel();
+      JPanel p2 = new JPanel();
+   
+      setLayout(new BoxLayout(this, BoxLayout.Y_AXIS) );
+      this.add(p1);
+      this.add(p2);
+   
+      BufferedImage tjLogo = ImageIO.read(this.getClass().getResource("Tjlogo.png"));
+      JLabel tjLogoLabel = new JLabel(new ImageIcon(tjLogo));
+      p1.add(tjLogoLabel);
+   
+      JLabel projectInfo = new JLabel("<html>This game was designed and developed<br>by TJ students: <br><br>"
+         	+ "&nbsp;&nbsp;&nbsp;&nbsp;Hardeep Mann<br>"
+         	+ "&nbsp;&nbsp;&nbsp;&nbsp;Jonluke O'Cain<br>"
+         	+ "&nbsp;&nbsp;&nbsp;&nbsp;Vayun Malik<br><br>"
+         	+ "under the guidance of:<br>"
+         	+ "&nbsp;&nbsp;&nbsp;&nbsp;Mr.Stephen Rose");
+   	
+      p1.add(projectInfo); 
+   	
+   	// set border for the project info panel
+      p1.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "TJ Project - MineSweeper"));
+   	
+   
+   	// add components to the preference panel
+      GridBagConstraints constraints = new GridBagConstraints();
+      constraints.anchor = GridBagConstraints.WEST;
+      constraints.insets = new Insets(10, 10, 10, 10);
+   
+      p2.setLayout(new GridBagLayout());
+   
+      constraints.gridx = 0;
+      constraints.gridy = 0;
+      constraints.anchor = GridBagConstraints.EAST;
+      JLabel labelDifficultyLevel = new JLabel("Suggested Level Values: ");
+      p2.add(labelDifficultyLevel, constraints);
+   
+      constraints.anchor = GridBagConstraints.WEST;
+   
+      String[] difficultyLevels = { "Easy", "Medium", "Hard" };
+      JComboBox cc = new JComboBox(difficultyLevels);
+   	
+      constraints.gridx = 1;
+      constraints.gridy = 0;
+      p2.add(cc, constraints);
+      cc.addActionListener(
+         new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+               if (cc.getSelectedIndex() == 0) {
+                  numCellsTextField.setText("12");
+                  nummMinesTextField.setText("18");
+               
+               } else if (cc.getSelectedIndex() == 1) {
+                  numCellsTextField.setText("14");
+                  nummMinesTextField.setText("32");
+               } else {
+                  numCellsTextField.setText("20");
+                  nummMinesTextField.setText("48");
+               }
+            
+               System.out.println("Selection: " + ((JComboBox) e.getSource()).getSelectedItem());
+            }
+         });
+   	
+      cc.setSelectedIndex(0);
+   
+      constraints.gridx = 0;
+      constraints.gridy = 1;
+      constraints.anchor = GridBagConstraints.EAST;
+      JLabel labelNumCells = new JLabel("Cells in a side: ");
+      p2.add(labelNumCells, constraints);
+   
+      constraints.gridx = 1;
+      p2.add(numCellsTextField, constraints);
+      numCellsTextField.addActionListener(new Listener1());
+   
+      constraints.gridx = 0;
+      constraints.gridy = 2;
+      JLabel labelNumMines = new JLabel("Number of Mines: ");
+      p2.add(labelNumMines, constraints);
+   
+      constraints.gridx = 1;
+      p2.add(nummMinesTextField, constraints);
+      nummMinesTextField.addActionListener(new Listener2());
+   
+      constraints.gridx = 0;
+      constraints.gridy = 3;
+      constraints.gridwidth = 2;
+      constraints.anchor = GridBagConstraints.CENTER;
+   
+      JButton buttoPlay = new JButton("Play");
+      p2.add(buttoPlay, constraints);
+   
+      buttoPlay.addActionListener(new Listener3());
+   
+   	// set border for the preference panel
+      p2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Game Preferences"));
    }
+
+
+	/****************************************
+	 * Serves as the user imput for set_num_bombs()
+	 *****************************************/
+   private class Listener1 implements ActionListener {
+      public void actionPerformed(ActionEvent e) {
+         System.out.println("Cellss...... " + numCellsTextField.getText());
+         processCellsTextField();
       
-   private class Listener1 implements ActionListener{
-      public void actionPerformed(ActionEvent e)
-      {
-         /****************************************
-         Once the user has entered all of the information pressing this
-         button will generate the playboard and start the game.
-         *****************************************/
-         side_length = Integer.parseInt(length_box.getText());
-         num_mines = Integer.parseInt(mines_box.getText());
-         JFrame frame = new JFrame("Mine Sweeper");
-         frame.setSize(1000, 450);
-         frame.setLocation(150, 100);
-         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-         frame.setContentPane(new Playboard_Panel(side_length, num_mines));
-         frame.setVisible(true);
       }
-     
+   
    }
+
+	/****************************************
+	 * Serves as the user imput for set_side_length()
+	 *****************************************/
+   private class Listener2 implements ActionListener {
+      public void actionPerformed(ActionEvent e) {
+         System.out.println("Mines...... " + nummMinesTextField.getText());
+         processMinesTextField();
+      
+      }
+   
+   }
+
+	/**************************************
+	 * Once the user has entered all of the information pressing this button will
+	 * generate the playboard and start the game.
+	 **************************************/
+
+   private class Listener3 implements ActionListener {
+      public void actionPerformed(ActionEvent e) {
+      
+         if (processCellsTextField() && processMinesTextField()) {
+            System.out.println("Playing can proceed......");
+            driver.actionfromStart_Up_Panel(numCellsInSide, numMines);
+         }
+      }
+   }
+
+   public boolean processMinesTextField() {
+      boolean ret = true;
+      try {
+         numMines = Integer.parseInt(nummMinesTextField.getText());
+         int totalCells = numCellsInSide * numCellsInSide;
+         if ((numMines <= 0) || (numMines >= totalCells)) {
+            ret = false;
+         	// int limitMines = totalCell
+            JOptionPane.showMessageDialog(this,
+               	"Number of Mines:: Only integer values between 1 -" + (totalCells - 1) + "  allowed.");
+         }
+      
+      } catch (NumberFormatException e) {
+         ret = false;
+         JOptionPane.showMessageDialog(this, "Number of Mines::Only integer values allowed!!");
+      }
+   
+      return ret;
+   }
+
+   public boolean processCellsTextField() {
+      boolean ret = true;
+      try {
+         numCellsInSide = Integer.parseInt(numCellsTextField.getText());
+         if ((numCellsInSide < 4) || (numCellsInSide > 24)) {
+            ret = false;
+            JOptionPane.showMessageDialog(numCellsTextField,
+               	"Number of Cells::Only integer values between 4 - 24 allowed.");
+         }
+      
+      } catch (NumberFormatException e) {
+         ret = false;
+         JOptionPane.showMessageDialog(numCellsTextField, "Number of Cells::Only integer values allowed!!");
+      }
+   
+      return ret;
+   }
+
 }
