@@ -1,3 +1,11 @@
+/*********************************************************************************
+*A square is a Button that maintains information about its location, and whether it is a mine.
+*A square has mutiple display states determined by user input and starting conditions. 
+*It also knows how to return its location in both the X and Y axis, if its been left flagged or 
+*how many Mines are adjacent to it. 
+*@author Jonluke O'Cain, Vauyun Malik, Hardeep Mann
+*@version 1.0
+*********************************************************************************/
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -5,16 +13,15 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.JButton;
 
-//Name: Hardeep Mann, Jonluke O`Cain, and Vayun Malik
-//Last Updated: 4/29/2021
-//Period: 2
 
 public class Square extends JButton {
-
-	// This class exhibits polymorphic behavior and defines the square objects.
-	// The square objects have three different states which are clicked_on, flagged,
-	// and untouched.
-	// The first state is untouched and all squares start out this way.
+/***************************************************************************
+*contructs a square with booleans is_Mine and is_Flagged false and integers x and y.
+*@param x x location
+*@param y y location
+*@param is_Flagged flagged status
+*@param is_Mine    
+***************************************************************************/
 
    private int x = 0;
    private int y = 0;
@@ -26,10 +33,17 @@ public class Square extends JButton {
       this.x = x;
       this.y = y;
    }
-
+ /********************************************
+*Returns the Whether the Square is flagged
+@return is_Flagged flagged status
+********************************************/
    public boolean isFlagged() {
       return isFlagged;
    }
+ /********************************************
+*Sets the is_Flagged boolean to the input boolean
+@param is_Flagged changes flagged status
+********************************************/
 
    public void setFlagged(boolean isFlagged) {
       this.isFlagged = isFlagged;
