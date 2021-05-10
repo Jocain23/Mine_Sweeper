@@ -1,7 +1,14 @@
-
-//Name: Hardeep Mann, Jonluke O`Cain, and Vayun Malik
-//Last Updated: 4/29/2021
-//Period: 2
+/***************************************************
+The playboard panel is the panel where the game takes
+place. It recieves the side length and number of mines
+from the start up panel, and creates the map accordingly.
+At first the map is just many empty squares, but once the
+player clicks on their first square it fills the map with
+bombs. It also checks for the result of the game and tells
+the game over panel accordingly.
+@author Hardeep Mann, Jonluke O'Cain and Vayun Malik
+@version 1.0
+ ****************************************************/
 import javax.swing.*;
 
 import java.awt.*;
