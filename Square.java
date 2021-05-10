@@ -20,7 +20,7 @@ public class Square extends JButton {
 *@param x x location
 *@param y y location
 *@param is_Flagged flagged status
-*@param is_Mine    
+*@param is_Mine  is_Mine is true when the square has a mine, and false otherwise
 ***************************************************************************/
 
    private int x = 0;
@@ -35,14 +35,14 @@ public class Square extends JButton {
    }
  /********************************************
 *Returns the Whether the Square is flagged
-@return is_Flagged flagged status
+*@return is_Flagged flagged status
 ********************************************/
    public boolean isFlagged() {
       return isFlagged;
    }
  /********************************************
 *Sets the is_Flagged boolean to the input boolean
-@param is_Flagged changes flagged status
+*@param is_Flagged changes flagged status
 ********************************************/
 
    public void setFlagged(boolean isFlagged) {
@@ -50,76 +50,83 @@ public class Square extends JButton {
    }
  /********************************************
 *Returns the Whether the Square is a mine
-@return is_Mine Mine status
+*@return is_Mine Mine status
 ********************************************/
    public boolean isMine() {
       return isMine;
    }
  /********************************************
 *Sets the is_Mine boolean to the input boolean
-@param is_Mine changes whether is a mine
+*@param is_Mine changes whether is a mine
 ********************************************/
    public void setIsMine(boolean isMine) {
       this.isMine = isMine;
    }
  /********************************************
 *Returns the Square's x location
-@return x x location
+*@return x x location
 ********************************************/
    public int getXLoc() {
       return x;
    }
  /********************************************
 *Tells the Square its x location
-@param x x location
+*@param x x location
 ********************************************/
    public void setXLoc(int x) {
       this.x = x;
    }
  /********************************************
 *Returns the Square's y location
-@return y y location
+*@return y y location
 ********************************************/
    public int getYLoc() {
       return y;
    }
  /********************************************
 *Tells the Square its y location
-@param y y location
+*@param y y location
 ********************************************/
    public void setYLoc(int y) {
       this.y = y;
    }
  /********************************************
 *Returns how many of the surrounding squares have mines
-@return minesTouching number of surrounding mines
+*@return minesTouching number of surrounding mines
 ********************************************/
    public int getMinesTouching() {
       return minesTouching;
    }
  /********************************************
 *Tells the Square how many of the surrounding squares have mines
-@param minesTouching number of surrounding mines
+*@param minesTouching number of surrounding mines
 ********************************************/
    public void setMinesTouching(int minesTouching) {
       this.minesTouching = minesTouching;
    }
-
+/*******************************************************
+*Returns whether given square has the same coordinates as this square
+*******************************************************/
    boolean isEqual(Square s) {
       boolean ret = false;
-      if (((this.x == s.getXLoc()) && (this.y == s.getYLoc()))) {
+      if (((this.x == s.getXLoc()) && (this.y == s.getYLoc()))) 
+      {
          ret = true;
       }
       return ret;
    }
-
+ /********************************************
+*Returns the coordinates of the square in a string
+********************************************/
    public String toString() {
       String s = "X: " + x + " Y: " + y;
       return s;
    }
-
-	// The boolean variable is_Mine is true when the square has a mine, and false
-	// otherwise.
+/*************************************************************************************
+*Displays on the square a bomb for a mine, or the number of surrouding 
+*mines if it is not a mine. If the number of surrounding mines is zero than only the
+*background is changed
+*************************************************************************************/
    public void display(boolean displayIcons) {
       this.setIcon(null);
       System.out.println("In function display:Mines Touching:: " + this.getMinesTouching());
@@ -159,7 +166,9 @@ public class Square extends JButton {
       }
    
    }
-
+/*************************************************************************************
+*Displays the flag image on the square 
+*************************************************************************************/
    public void displayFlag(boolean displayIcons) {
    
       System.out.println("In function displayFlag:Mines Touching:: " + this.getMinesTouching());
@@ -173,12 +182,13 @@ public class Square extends JButton {
             Icon icon = new javax.swing.ImageIcon(resultImg);
             this.setIcon(icon);
          } catch (IOException e) {
-         	// TODO Auto-generated catch block
             e.printStackTrace();
          }
       }
    }
-
+/**********************************************
+*Returns The square to its starting display
+*****************************************/
    public void displayOrig() {
       System.out.println("In function displayOrig:Mines Touching: " + this.getMinesTouching());
    
@@ -186,7 +196,13 @@ public class Square extends JButton {
       this.setIcon(null);
       this.setText("");
    }
-
+/**********************************************
+*Returns The square to its starting state
+*@param x x location
+*@param y y location
+*@param is_Flagged flagged status
+*@param is_Mine  is_Mine is true when the square has a mine, and false otherwise
+*****************************************/
    public void reset() {
       x = y = minesTouching = 0;
       isFlagged = isMine = false;
