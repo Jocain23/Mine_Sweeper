@@ -29,7 +29,6 @@ public class StopWatch extends JLabel implements ActionListener {
    public StopWatch()
    {
       this.setForeground(Color.BLUE);
-    	//this.setBackground(Color.CYAN);
       this.setFont(new Font("Arial", Font.PLAIN, 16));
       Timer timer = new Timer(1000, this);
       timer.setInitialDelay(1);
