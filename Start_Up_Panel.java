@@ -51,8 +51,8 @@ public class Start_Up_Panel extends JPanel {
          	+ "&nbsp;&nbsp;&nbsp;&nbsp;Hardeep Mann<br>"
          	+ "&nbsp;&nbsp;&nbsp;&nbsp;Jonluke O'Cain<br>"
          	+ "&nbsp;&nbsp;&nbsp;&nbsp;Vayun Malik<br><br>"
-         	+ "under the guidance of:<br>"
-         	+ "&nbsp;&nbsp;&nbsp;&nbsp;Mr.Stephen Rose");
+         	+ "under the guidance of<br>"
+         	+ "&nbsp;&nbsp;&nbsp;&nbsp; the great Mr. Rose");
    	
       p1.add(projectInfo); 
    	
