@@ -100,7 +100,8 @@ public class Square extends JButton {
             }
          }
       } else {
-         this.setBackground(Color.GREEN);
+         Color grass = new Color(51, 255, 82);
+         this.setBackground(grass);
          this.setText(Integer.toString(this.getMinesTouching()));
       }
    
