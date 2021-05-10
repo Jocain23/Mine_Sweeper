@@ -1,20 +1,52 @@
-   //Name: Hardeep Mann, Jonluke O'Cain, and Vayun Malik
-   //Date: 5/6/2021
-   //Period: 2
-   import javax.swing.JFrame;
-public class Minesweeper_Driver
-{
-   //This is the class that will set everything up. 
-   public static void main(String[] args)
-   {
-   //This method will create the start up panel with a predetermined size.
-   //When the start up panel gets the size and number of mines from the user it will send that information to the playboard panel. 
-   //Then the driver will create the playboard panel, and then create the game over panel when the game ends.
-         JFrame frame = new JFrame("Mine Sweeper");
-         frame.setSize(800, 200);
-         frame.setLocation(150, 100);
-         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-         frame.setContentPane(new Start_Up_Panel());
-         frame.setVisible(true);
+import java.io.IOException;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
+public class PlaySound {
+
+   public static void playSoundGameOver(boolean isWinner, int loops) {
+   
+      String fileName = null;
+      if (isWinner) {
+         fileName = "snare.wav";
+      } else {
+         fileName = "mine1.wav";
+      }
+   
+      playSoundFile(fileName, loops);
+   }
+
+   public static void playSoundFile(String file, int loops) {
+      AudioInputStream audioInputStream = null;
+   
+      Clip clip = null;
+   
+      try {
+         java.net.URL url = null;
+      
+         url = PlaySound.class.getResource(file);
+         audioInputStream = AudioSystem.getAudioInputStream(url);
+      	
+         clip = AudioSystem.getClip();
+         clip.open(audioInputStream);
+      
+      } catch (LineUnavailableException e) {
+      	// TODO Auto-generated catch block
+         e.printStackTrace();
+      } catch (IOException e) {
+      	// TODO Auto-generated catch block
+         e.printStackTrace();
+      
+      } catch (UnsupportedAudioFileException e1) {
+      	// TODO Auto-generated catch block
+         e1.printStackTrace();
+      }
+   
+      clip.loop(loops);
+      clip.flush();
    }
 }
