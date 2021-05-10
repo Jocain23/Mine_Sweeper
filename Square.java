@@ -145,6 +145,7 @@ public class Square extends JButton {
    
       this.setBackground(Color.LIGHT_GRAY);
       this.setIcon(null);
+      this.setText("");
    }
 
    public void reset() {
