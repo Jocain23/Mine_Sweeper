@@ -194,9 +194,7 @@ public class Square extends JButton {
       isFlagged = isMine = false;
    }
 
-   public void flagged() {
-   	// This is the state when the square is flagged.
-   }
+
 
    public static Square[] squareNeighbors(Square[][] squares, Square focus) {
    
