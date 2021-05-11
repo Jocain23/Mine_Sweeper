@@ -1,7 +1,9 @@
-
-//Name: Hardeep Mann, Jonluke O'Cain, and Vayun Malik
-//Date: 4/29/2021
-//Period: 2
+/*******************************************************
+* Minesweeper_Driver calls everything else and ties the 
+*whole game together. It calls all of the panels.
+*@author Jonluke O'Cain, Hardeep Mann, Vayun Malik
+*@version 1.0
+*******************************************************/
 import java.io.IOException;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
@@ -13,7 +15,10 @@ public class Minesweeper_Driver {
    JFrame frameGameOver = null;
    StopWatch timerLabel = null;
    boolean displayIcons = true;
-
+/************************************
+* Calls the start up panel
+*
+***********************************/
    public void showStart_Up_Panel() {
       frameStartup = new JFrame("Mine Sweeper_StartUp");
    	// frameStartup.setSize(500, 150);
@@ -22,21 +27,30 @@ public class Minesweeper_Driver {
       try {
          frameStartup.setContentPane(new Start_Up_Panel(this));
       } catch (IOException e) {
-      	// TODO Auto-generated catch block
          e.printStackTrace();
       }
    
       frameStartup.pack();
       frameStartup.setVisible(true);
    }
-
+/************************************
+* Hides the start_Up_Panel and calls
+* the Playboard_Panel with the varibles
+* from start_Up_Panel 
+*
+***********************************/
    public void actionfromStart_Up_Panel(int cells, int mines) {
       System.out.println("User Entered: Cells in a side:  " + cells + " Mines: " + mines);
       frameStartup.setVisible(false);
    
       showPlayboard_Panel(cells, mines);
    }
-
+/************************************
+* Displays the  Playboard_Panel with the varibles
+* for the number of Squares and the Number of Mines.
+* Also sets some of the formating for Playboard_Panel 
+*and calls StopWatch
+************************************/
    public void showPlayboard_Panel(int cells, int mines) {
       if (framePlayboard != null) {
          framePlayboard.setVisible(false);
@@ -69,14 +83,18 @@ public class Minesweeper_Driver {
       framePlayboard.setVisible(true);
    
    }
-
+/**************************
+*Calls Game_Over_Panel after win conditon
+**************************/
    public void actionPlayboard_Panel(boolean isWinner) {
       System.out.println("actionPlayboard_Panel");
    
       timerLabel.stopStopWatch();
       showGameover_Panel(isWinner);
    }
-
+/**************************
+*Displays and formats Game_Over_Panel after win conditon
+**************************/
    public void showGameover_Panel(boolean isWinner) {
    
       System.out.println("showGameover_Panel");
@@ -87,7 +105,6 @@ public class Minesweeper_Driver {
       try {
          frameGameOver.setContentPane(new Game_Over_Panel(this, isWinner));
       } catch (IOException e) {
-      	// TODO Auto-generated catch block
          e.printStackTrace();
       }
    
@@ -96,7 +113,9 @@ public class Minesweeper_Driver {
       frameGameOver.pack();
       frameGameOver.setVisible(true);
    }
-
+/*******************************************
+*Restarts game, calling start_Up_Panel
+*********************************************/
    public void actionfromGameover_Panel(boolean replay) {
       System.out.println("User Entered: to replay:  " + replay);
       frameGameOver.setVisible(false);
