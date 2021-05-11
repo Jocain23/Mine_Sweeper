@@ -1,14 +1,14 @@
 /***************************************************
-The Start Up Panel is made up of two subpanels. The 
-first of which displays the TJHSST logo and who created
-the program. The second panel is the one the user interacts
-with. It gives a drop down member where players can pick 
-three different modes. These are easy medium and hard. 
-If the player decides to they can enter their own values
-for side length and the number of mines. They go from ranges
-of 4-24 for the sidelength, and 1-143 for mines.
-@author Hardeep Mann, Jonluke O'Cain and Vayun Malik
-@version 1.0
+*The Start Up Panel is made up of two subpanels. The 
+*first of which displays the TJHSST logo and who created
+*the program. The second panel is the one the user interacts
+*with. It gives a drop down member where players can pick 
+*three different modes. These are easy medium and hard. 
+*If the player decides to they can enter their own values
+*for side length and the number of mines. They go from ranges
+*of 4-24 for the sidelength, and 1-143 for mines.
+*@author Hardeep Mann, Jonluke O'Cain and Vayun Malik
+*@version 1.0
  ****************************************************/
 import javax.imageio.ImageIO;
 import javax.swing.*;
