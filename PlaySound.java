@@ -1,10 +1,10 @@
 /***************************************************
-This is one of the simplest classes we made as it 
-just plays a sound: either a trumpet noise or a
-sound of an explosion depending on whether the 
-user wins or loses the minesweeper game.
-@author Hardeep Mann, Jonluke O'Cain and Vayun Malik
-@version 1.0
+*This is one of the simplest classes we made as it 
+*just plays a sound: either a trumpet noise or a
+*sound of an explosion depending on whether the 
+*user wins or loses the minesweeper game.
+*@author Hardeep Mann, Jonluke O'Cain and Vayun Malik
+*@version 1.0
  ****************************************************/
 
 import java.io.IOException;
