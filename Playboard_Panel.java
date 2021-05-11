@@ -16,7 +16,9 @@ import java.awt.event.*;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
-
+/***********************************
+*Sets up the playboard.
+***********************************/
 public class Playboard_Panel extends JPanel {
    private int cellsInSide = 0;
    private int mines = 0;
@@ -41,10 +43,12 @@ public class Playboard_Panel extends JPanel {
       this.setLayout(new BorderLayout());
       Initial_Generate();
    }
-
+/***********************************
+*The first generate that creates the
+*map.
+***********************************/
    public void Initial_Generate() {
    
-   	/// Generates the initial map with each square
    
       squares = new Square[cellsInSide][cellsInSide];
    
@@ -64,7 +68,10 @@ public class Playboard_Panel extends JPanel {
    
       this.add(grid, BorderLayout.CENTER);
    }
-
+/***********************************
+*This is the secondary generate
+*which fills all the squares.
+***********************************/
    public void Final_Generate() {
       Set<String> safeSquareAndMinesLocation = new HashSet<String>();
       safeSquareAndMinesLocation.add(start_X + " " + start_Y);
@@ -97,7 +104,10 @@ public class Playboard_Panel extends JPanel {
       System.out.println("First selected square at: " + start_X + " " + start_Y);
       System.out.println("Mines are at: " + safeSquareAndMinesLocation.toString());
    }
-
+/***********************************
+*This action listener checks for if 
+*you have clicked a mine or not. 
+***********************************/
    private final ActionListener actionListener = 
       actionEvent -> {
          Object source = actionEvent.getSource();
@@ -109,14 +119,6 @@ public class Playboard_Panel extends JPanel {
             Final_Generate();
             Square.updateMinesTochingCount(squares);
          
-         /** For debugging purposes only **/
-         /*
-         for (int x = 0; x < cellsInSide; x++) {
-         	for (int y = 0; y < cellsInSide; y++) {
-         		squares[x][y].displayForDebug();
-         	}
-         }
-         */
          
             if (((Square) source).getMinesTouching() == 0) {
                lookDisplaySafeSquares(((Square) source));
@@ -147,7 +149,9 @@ public class Playboard_Panel extends JPanel {
          }
       
       };
-
+/***********************************
+*This checks for victory.
+***********************************/
    private int checkPlayboardResults() {
       int ret = 1;
    
@@ -156,10 +160,8 @@ public class Playboard_Panel extends JPanel {
             if (squares[x][y].isEnabled()) {
                if (squares[x][y].isFlagged()) {
                   if (squares[x][y].isMine()) {
-                  	// System.out.println("Mine flagged properly: " + squares[x][y].toString());
                      ret = 1;
                   } else {
-                  	// System.out.println("Mine flagged improperly: " + squares[x][y].toString());
                      ret = 0;
                      break outer;
                   }
@@ -186,7 +188,11 @@ public class Playboard_Panel extends JPanel {
    
       return ret;
    }
-
+/***********************************
+*This displays all the safe squares
+*next to a square that the user 
+*revealed.
+***********************************/
    private void lookDisplaySafeSquares(Square sq) {
       if (checked.add(sq.toString())) {
       
@@ -214,7 +220,10 @@ public class Playboard_Panel extends JPanel {
          }
       }
    }
-
+/***********************************
+*This disables the playboard when
+*needed.
+***********************************/
    private void disablePlayboard() {
       for (int x = 0; x < cellsInSide; x++) {
          for (int y = 0; y < cellsInSide; y++) {
@@ -222,7 +231,11 @@ public class Playboard_Panel extends JPanel {
          }
       }
    }
-
+/***********************************
+*This finds the difference between
+*left click and right click. Then
+*it acts accordingly.
+***********************************/
    MouseListener mouseListener = 
       new MouseAdapter() {
          public void mouseReleased(MouseEvent mouseEvent) {
