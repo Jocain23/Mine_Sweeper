@@ -34,7 +34,7 @@ public class PlaySound
    }
 /***********************************
 *This Method is what acutally plays a 
-* spesified sound file
+* specified sound file
 ***********************************/
    public static void playSoundFile(String file, int loops) {
       AudioInputStream audioInputStream = null;
