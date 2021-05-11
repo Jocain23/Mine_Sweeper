@@ -151,20 +151,7 @@ public class Square extends JButton {
    
    }
 
-   public void displayForDebug() {
-      this.setIcon(null);
-   
-      System.out.println("In function displayForDebug:Mines Touching:: " + this.getMinesTouching());
-   
-      if (isMine) {
-         this.setBackground(Color.MAGENTA);
-         this.setText("M");
-      } else {
-         this.setBackground(Color.cyan);
-         this.setText(Integer.toString(this.getMinesTouching()));
-      }
-   
-   }
+  
 /*************************************************************************************
 *Displays the flag image on the square 
 *************************************************************************************/
@@ -251,7 +238,13 @@ public class Square extends JButton {
       System.out.println();
       return myNeighbours;
    }
-
+/***********************
+* This method is used to count 
+* The number of mines surrounding 
+* the square and update the varible 
+* minesTouching
+* @param minesTouching
+***********************/
    public static void updateMinesTochingCount(Square[][] squares) {
       int cellsInSide = squares[0].length;
       for (int x = 0; x < cellsInSide; x++) {
