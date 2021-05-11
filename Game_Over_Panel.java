@@ -1,7 +1,14 @@
-
-//Name: Hardeep Mann, Jonluke O`Cain, and Vayun Malik
-//Last Updated: 4/29/2021
-//Period: 2
+/***************************************************
+The game over panel is the panel shown to the user after 
+the game ends. It recieves whether or not the user has won
+or lost from the playboard panel, and displays either 
+a picture of a trophy with a victory noise or "Try Again"
+with the noise of an explosion depending on whether or not
+the user wins the game. It also gives the user the chance 
+to play the game again or exit the application.
+@author Hardeep Mann, Jonluke O'Cain and Vayun Malik
+@version 1.0
+ ****************************************************/
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
