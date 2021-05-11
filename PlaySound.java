@@ -15,16 +15,20 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-public class PlaySound {
+public class PlaySound 
+{
 
    public static void playSoundGameOver(boolean isWinner, int loops) {
    
       String fileName = null;
-      if (isWinner) {
+      if (isWinner) 
+         {
          fileName = "snare.wav";
-      } else {
+         } 
+      else 
+       {
          fileName = "mine1.wav";
-      }
+       }
    
       playSoundFile(fileName, loops);
    }
@@ -34,7 +38,8 @@ public class PlaySound {
    
       Clip clip = null;
    
-      try {
+      try 
+        {
          java.net.URL url = null;
       
          url = PlaySound.class.getResource(file);
@@ -43,15 +48,18 @@ public class PlaySound {
          clip = AudioSystem.getClip();
          clip.open(audioInputStream);
       
-      } catch (LineUnavailableException e) {
-      	// TODO Auto-generated catch block
+      }
+      catch (LineUnavailableException e) 
+      {
          e.printStackTrace();
-      } catch (IOException e) {
-      	// TODO Auto-generated catch block
+      } 
+      catch (IOException e)
+      {
          e.printStackTrace();
       
-      } catch (UnsupportedAudioFileException e1) {
-      	// TODO Auto-generated catch block
+      } 
+      catch (UnsupportedAudioFileException e1) 
+      {
          e1.printStackTrace();
       }
    
