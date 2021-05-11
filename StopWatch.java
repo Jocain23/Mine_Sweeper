@@ -1,9 +1,9 @@
 /***************************************************
-This is one of the simplest classes we made as it 
-just displays a stopwatch, so the user can know
-how much time has elapsed, while they play.
-@author Hardeep Mann, Jonluke O'Cain and Vayun Malik
-@version 1.0
+*This is one of the simplest classes we made as it 
+*just displays a stopwatch, so the user can know
+*how much time has elapsed, while they play.
+*@author Hardeep Mann, Jonluke O'Cain and Vayun Malik
+*@version 1.0
  ****************************************************/
 import java.awt.Color;
 import java.awt.Font;
@@ -13,7 +13,10 @@ import java.time.Duration;
 import java.time.Instant;
 
 import javax.swing.*;
-
+/***********************************
+*This creates all the different 
+*timings of seconds minutes and hours.
+***********************************/
 public class StopWatch extends JLabel implements ActionListener {
 
    public final static long ONE_SECOND = 1000;
@@ -30,7 +33,9 @@ public class StopWatch extends JLabel implements ActionListener {
    boolean stop = false;
    Instant start = Instant.now();
    Instant end = Instant.now();
-	
+/***********************************
+*Sets the font and starts the watch.
+***********************************/	
    public StopWatch()
    {
       this.setForeground(Color.BLUE);
@@ -48,7 +53,11 @@ public class StopWatch extends JLabel implements ActionListener {
       end = Instant.now();
       stop = true;
    }
-
+/***********************************
+*Gets the times in milliseconds,
+*performs the divisions and prints
+*the time to the user.
+***********************************/
    @Override
    public void actionPerformed(ActionEvent e) {
       if (stop == false) {
