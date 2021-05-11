@@ -124,8 +124,7 @@ public class Square extends JButton {
    }
 /*************************************************************************************
 *Displays on the square a bomb for a mine, or the number of surrouding 
-*mines if it is not a mine. If the number of surrounding mines is zero than only the
-*background is changed
+*mines if it is not a mine. Also changes the background to green
 *************************************************************************************/
    public void display(boolean displayIcons) {
       this.setIcon(null);
