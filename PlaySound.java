@@ -35,6 +35,8 @@ public class PlaySound
 /***********************************
 *This Method is what acutally plays a 
 * specified sound file
+*@param file The sound file to play
+*@param loops the number of times to play the sound
 ***********************************/
    public static void playSoundFile(String file, int loops) {
       AudioInputStream audioInputStream = null;
