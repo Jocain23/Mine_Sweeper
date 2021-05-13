@@ -150,7 +150,8 @@ public class Playboard_Panel extends JPanel {
       
       };
 /***********************************
-*This checks for victory.
+*This checks for game end and win conditions.
+*@return ret 0 for lose, 1 for win, breaks for no game end
 ***********************************/
    private int checkPlayboardResults() {
       int ret = 1;
@@ -192,6 +193,7 @@ public class Playboard_Panel extends JPanel {
 *This displays all the safe squares
 *next to a square that the user 
 *revealed.
+*@param sq given square to check around
 ***********************************/
    private void lookDisplaySafeSquares(Square sq) {
       if (checked.add(sq.toString())) {
