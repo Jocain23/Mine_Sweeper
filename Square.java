@@ -190,7 +190,13 @@ public class Square extends JButton {
       isFlagged = isMine = false;
    }
 
-
+/****************************************
+* Creates a matrix of suqares containing
+* this squares neighbors in the play board
+*@param squares the playboard matrixes
+*@param focus this square
+*@return myNeighbours this squares neighbors 
+****************************************/
 
    public static Square[] squareNeighbors(Square[][] squares, Square focus) {
    
