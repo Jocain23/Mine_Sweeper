@@ -17,10 +17,6 @@ import javax.swing.JButton;
 public class Square extends JButton {
 /***************************************************************************
 *contructs a square with booleans is_Mine and is_Flagged false and integers x and y.
-*@param x x location
-*@param y y location
-*@param is_Flagged flagged status
-*@param is_Mine  is_Mine is true when the square has a mine, and false otherwise
 ***************************************************************************/
 
    private int x = 0;
@@ -35,14 +31,14 @@ public class Square extends JButton {
    }
  /********************************************
 *Returns the Whether the Square is flagged
-*@return is_Flagged flagged status
+*@return isFlagged flagged status
 ********************************************/
    public boolean isFlagged() {
       return isFlagged;
    }
  /********************************************
 *Sets the is_Flagged boolean to the input boolean
-*@param is_Flagged changes flagged status
+*@param isFlagged changes flagged status
 ********************************************/
 
    public void setFlagged(boolean isFlagged) {
@@ -50,14 +46,14 @@ public class Square extends JButton {
    }
  /********************************************
 *Returns the Whether the Square is a mine
-*@return is_Mine Mine status
+*@return isMine Mine status
 ********************************************/
    public boolean isMine() {
       return isMine;
    }
  /********************************************
 *Sets the is_Mine boolean to the input boolean
-*@param is_Mine changes whether is a mine
+*@param isMine changes whether is a mine
 ********************************************/
    public void setIsMine(boolean isMine) {
       this.isMine = isMine;
@@ -106,6 +102,9 @@ public class Square extends JButton {
    }
 /*******************************************************
 *Returns whether given square has the same coordinates as this square
+*@param s the square this square is compaired to 
+*@return ret Tells whether the two squares have the same cordinates
+
 *******************************************************/
    boolean isEqual(Square s) {
       boolean ret = false;
@@ -125,6 +124,7 @@ public class Square extends JButton {
 /*************************************************************************************
 *Displays on the square a bomb for a mine, or the number of surrouding 
 *mines if it is not a mine. Also changes the background to green
+*@param displayIcons tells what icon the square should display
 *************************************************************************************/
    public void display(boolean displayIcons) {
       this.setIcon(null);
@@ -139,7 +139,6 @@ public class Square extends JButton {
                Icon icon = new javax.swing.ImageIcon(resultImg);
                this.setIcon(icon);
             } catch (IOException e) {
-            	// TODO Auto-generated catch block
                e.printStackTrace();
             }
          }
@@ -154,6 +153,7 @@ public class Square extends JButton {
   
 /*************************************************************************************
 *Displays the flag image on the square 
+*@param displayIcons tells what icon the square should display
 *************************************************************************************/
    public void displayFlag(boolean displayIcons) {
    
@@ -184,10 +184,6 @@ public class Square extends JButton {
    }
 /**********************************************
 *Returns The square to its starting state
-*@param x x location
-*@param y y location
-*@param is_Flagged flagged status
-*@param is_Mine  is_Mine is true when the square has a mine, and false otherwise
 *****************************************/
    public void reset() {
       x = y = minesTouching = 0;
@@ -241,7 +237,7 @@ public class Square extends JButton {
 * The number of mines surrounding 
 * the square and update the varible 
 * minesTouching
-* @param minesTouching
+* @param squares a matrix of squares that are clones of the squares surrounding this one on the display
 ***********************/
    public static void updateMinesTochingCount(Square[][] squares) {
       int cellsInSide = squares[0].length;
