@@ -37,7 +37,8 @@ public class Minesweeper_Driver {
 * Hides the start_Up_Panel and calls
 * the Playboard_Panel with the varibles
 * from start_Up_Panel 
-*
+*@param cells number of square to be generated
+*@param mines number of mines to be place in the squares
 ***********************************/
    public void actionfromStart_Up_Panel(int cells, int mines) {
       System.out.println("User Entered: Cells in a side:  " + cells + " Mines: " + mines);
@@ -50,6 +51,8 @@ public class Minesweeper_Driver {
 * for the number of Squares and the Number of Mines.
 * Also sets some of the formating for Playboard_Panel 
 *and calls StopWatch
+*@param cells number of square to be generated
+*@param mines number of mines to be place in the squares
 ************************************/
    public void showPlayboard_Panel(int cells, int mines) {
       if (framePlayboard != null) {
@@ -85,6 +88,7 @@ public class Minesweeper_Driver {
    }
 /**************************
 *Calls Game_Over_Panel after win conditon
+*@param isWinner Tells the game if player won
 **************************/
    public void actionPlayboard_Panel(boolean isWinner) {
       System.out.println("actionPlayboard_Panel");
@@ -94,6 +98,7 @@ public class Minesweeper_Driver {
    }
 /**************************
 *Displays and formats Game_Over_Panel after win conditon
+*@param isWinner Tells the game if player won
 **************************/
    public void showGameover_Panel(boolean isWinner) {
    
@@ -115,6 +120,7 @@ public class Minesweeper_Driver {
    }
 /*******************************************
 *Restarts game, calling start_Up_Panel
+*@param replay Tells the game if the player wants to play again
 *********************************************/
    public void actionfromGameover_Panel(boolean replay) {
       System.out.println("User Entered: to replay:  " + replay);
